@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+	<script src="lazyload.js"></script>
+	<style>
+		*{
+			padding: 0;
+			margin:0;
+		}
+		.wrap{
+			width: 800px;
+			margin: 0 auto;
+		}
+		.wrap-item{
+            width: 500px;
+            height: 300px;
+            /*box-sizing: border-box;*/
+            border: 1px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            -webkit-box-shadow: 0 0 15px #666;
+            -moz-box-shadow: 0 0 15px #666;
+            box-shadow: 0 0 15px #666;
+            /*position: absolute;*/
+            text-align: center;
+        }
+        .wrap-item>img{
+            height: 280px;
+            width: 300px;
+            /*display: block;*/
+            margin: 10px;
+        }
+	</style>
+</head>
+<body>
+	<div class="wrap">
+<!-- 		<div class="wrap-item">
+			<img src="" class="lazyload">
+		</div> -->
+	</div>
+	<script>
+
+			var pictureSources = [
+				'1.jpg',
+				'2.jpg',
+				'3.jpg',
+				'4.jpg',
+				'5.jpg',
+				'6.jpg',
+				'7.jpg',
+				'8.jpg',
+				'9.jpg',
+				'10.jpg',
+				'11.jpg',
+				'12.jpg',
+				'13.jpg',
+				'14.jpg'
+			];
+
+   //      $(function () {
+   // //          src="";
+			// // $.each(pictureSources, function (key, value) {
+   // //                  src = value;
+   // //                  console.log(src)
+   // //                  $('.wrap-item').append(this);
+   // //                  $('.wrap-item').children("img").attr("src",'img/'+this);
+   // //          	});
+   // //          });
+   //          for(let i = 0; i < pictureSources.length; i++){
+   //          	console.log(pictureSources[i]);
+   //              $('.lazyload').attr("src",'img/'+pictureSources[i]);
+   //          }	
+   //     	});
+           $(function () {
+           	$("img").lazyload();
+            for(let i = 0; i < pictureSources.length; i++){
+				var img = "<div class='wrap-item'><img class='lazyload' src='./img/" + pictureSources[i] + "'/></div>";
+				// console.log(img);
+				$('.wrap').append(img);
+            }	
+           
+       	});
+	</script>
+</body>
+</html>
